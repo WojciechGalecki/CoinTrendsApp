@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 import wg.cointrends.api.domain.BtcUsd;
-import wg.cointrends.api.domain.BtcUsdData;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -27,8 +27,10 @@ public class ApiServiceImpl implements ApiService {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder
                 .fromUriString(API_URL);
 
-        BtcUsdData btcUsdData = restTemplate.getForObject(uriBuilder.toString(), BtcUsdData.class);
 
-        return btcUsdData.getData();
+        BtcUsd[] response = restTemplate.getForObject(uriBuilder.build().toString(), BtcUsd[].class);
+
+
+        return Arrays.asList(response);
     }
 }
