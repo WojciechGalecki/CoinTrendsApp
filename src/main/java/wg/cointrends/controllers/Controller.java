@@ -13,10 +13,10 @@ public class Controller {
         this.apiService = apiService;
     }
 
-    @GetMapping("/home")
+    @GetMapping("/coin")
     public String test(Model model){
 
         model.addAttribute("list", apiService.getBtcUsd());
-        return "test";
+        return "index";
     }
 }
