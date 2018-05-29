@@ -4,6 +4,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import wg.cointrends.services.ApiService;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 @org.springframework.stereotype.Controller
 public class Controller {
 
@@ -16,7 +20,19 @@ public class Controller {
     @GetMapping("/coin")
     public String test(Model model){
 
-        model.addAttribute("list", apiService.getBtcUsd());
+        List<Double> avgs = new LinkedList<>();
+        List<String> data = new LinkedList<>();
+
+        apiService.getBtcUsd().stream().iterator().forEachRemaining(avg -> {
+                    avgs.add(avg.getAverage());
+                    data.add(avg.getTime());
+        });
+
+        model.addAttribute("avg", Arrays.asList(avgs));
+        model.addAttribute("data", Arrays.asList(data));
+
+
+
         return "index";
     }
 }
