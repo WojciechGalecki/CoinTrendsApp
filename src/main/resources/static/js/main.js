@@ -3,7 +3,7 @@ Highcharts.chart('container', {
         zoomType: 'x'
     },
     title: {
-        text: 'USD to EUR exchange rate over time'
+        text: 'Coins exchange rate over time [USD]'
     },
     subtitle: {
         text: document.ontouchstart === undefined ?
@@ -49,7 +49,7 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'USD to EUR',
-        data: testData
+        name: 'BTCUSD',
+        data: bitcoin
     }]
 });
