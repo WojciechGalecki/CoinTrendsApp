@@ -15,4 +15,5 @@ public class BtcUsd {
     private Double average;
     private Double high;
     private String time;
+
 }
