@@ -1,14 +1,9 @@
 Highcharts.chart('container', {
-    chart: {
-        zoomType: 'x'
-    },
+    
     title: {
         text: 'Coins exchange rate over time [USD]'
     },
-    subtitle: {
-        text: document.ontouchstart === undefined ?
-            'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-    },
+
     xAxis: {
         type: 'datetime'
     },
