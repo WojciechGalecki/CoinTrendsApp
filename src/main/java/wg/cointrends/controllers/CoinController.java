@@ -17,6 +17,8 @@ public class CoinController {
     public String getIndexPage(Model model) {
 
         model.addAttribute("BTCUSD", chartService.prepareDataToChart(CoinCode.BTCUSD));
+        model.addAttribute("ETHUSD", chartService.prepareDataToChart(CoinCode.ETHUSD));
+        model.addAttribute("LTCUSD", chartService.prepareDataToChart(CoinCode.LTCUSD));
 
         return "index";
     }

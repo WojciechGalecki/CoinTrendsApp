@@ -1,5 +1,5 @@
 Highcharts.chart('container', {
-    
+
     title: {
         text: 'Coins exchange rate over time [USD]'
     },
@@ -46,5 +46,11 @@ Highcharts.chart('container', {
     series: [{
         name: 'BTCUSD',
         data: bitcoin
+    }, {
+        name: "ETHUSD",
+        data: ethereum
+    }, {
+        name: "LTCUSD",
+        data: litecoin
     }]
 });
