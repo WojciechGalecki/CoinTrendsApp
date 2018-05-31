@@ -1,6 +1,7 @@
 package wg.cointrends.controllers;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import wg.cointrends.api.domain.CoinCode;
 import wg.cointrends.services.ApiService;
 
 import java.time.LocalDateTime;
@@ -9,21 +10,21 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @org.springframework.stereotype.Controller
-public class Controller {
+public class CoinController {
 
     private ApiService apiService;
 
-    public Controller(ApiService apiService) {
+    public CoinController(ApiService apiService) {
         this.apiService = apiService;
     }
 
     @GetMapping("/coin")
-    public String test(Model model) {
+    public String getIndexPage(Model model) {
 
         List<Double> avgs = new LinkedList<>();
         List<String> data = new LinkedList<>();
 
-        apiService.getBtcUsd().stream().iterator().forEachRemaining(avg -> {
+        apiService.getCoinData(CoinCode.BTCUSD).stream().iterator().forEachRemaining(avg -> {
             avgs.add(avg.getAverage());
             data.add(avg.getTime());
         });
@@ -51,7 +52,7 @@ public class Controller {
 
        List<Object[]> test = new ArrayList<>();
 
-        apiService.getBtcUsd().stream().iterator().forEachRemaining( t -> {
+        apiService.getCoinData(CoinCode.BTCUSD).stream().iterator().forEachRemaining( t -> {
 
             Object[] array = new Object[2];
             array[0] = getLongTime(t.getTime());
@@ -60,7 +61,7 @@ public class Controller {
             test.add(array);
         });
 
-        test.subList(90, test.size()).clear();
+        //test.subList(90, test.size()).clear();
 
         model.addAttribute("test", test);
 

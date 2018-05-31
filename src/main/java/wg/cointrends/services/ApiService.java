@@ -1,10 +1,11 @@
 package wg.cointrends.services;
 
-import wg.cointrends.api.domain.BtcUsd;
+import wg.cointrends.api.domain.Coin;
+import wg.cointrends.api.domain.CoinCode;
 
 import java.util.List;
 
 public interface ApiService {
 
-    List<BtcUsd> getBtcUsd();
+    List<Coin> getCoinData(CoinCode code);
 }

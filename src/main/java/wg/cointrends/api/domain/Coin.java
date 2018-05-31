@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BtcUsd {
+public class Coin {
 
     private Double volume;
     private Integer open;
