@@ -27,6 +27,5 @@ public class ApiServiceImpl implements ApiService {
         Coin[] response = restTemplate.getForObject(uriBuilder.build().toString(), Coin[].class);
 
         return Arrays.asList(response);
-
     }
 }
