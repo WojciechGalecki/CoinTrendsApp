@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>CoinTrends</title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link th:href="@{/css/main.css}" rel="stylesheet"/>
 </head>
 <body>
@@ -11,6 +11,23 @@
 <h2>CoinTrends Challenge 2018</h2>
 
 <div id="container" style="height: 400px; min-width: 310px"></div>
+
+<div class="container">
+    <span class="label label-primary" style="color: #7cb5ec">BTCUSD</span>
+    <span class="label label-default" style="color: #90ed7d">ETHUSD</span>
+    <span class="label label-success" style="color: #434348">LTCUSD</span>
+</div>
+
+<div style="margin-left: 800px">
+    <form class="form-inline" th:action="@{/coin}" method="post" id="rangeForm">
+        <label for="start">Start</label>
+        <input type="date" name="start" id="start">
+        <label for="end">End</label>
+        <input type="date" name="end" id="end">
+        <button type="submit" class="myBtn btn btn-primary ">Change chart time range</button>
+    </form>
+</div>
+
 
 <script th:inline="javascript">
     /*<![CDATA[*/
