@@ -9,10 +9,10 @@ import java.time.format.DateTimeFormatter;
 @Service
 public interface DateTimeService {
 
-    static Long getMilliseconds(String time) {
+    static Long getMilliseconds(String dateTime) {
 
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime localDate = LocalDateTime.parse(time, df);
+        LocalDateTime localDate = LocalDateTime.parse(dateTime, df);
 
         return localDate.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
     }

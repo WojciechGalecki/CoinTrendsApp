@@ -26,9 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.assertj.core.api.Assertions.*;
 
-public class CoinControllerTest {
+public class IndexControllerTest {
 
-    CoinController controller;
+    IndexController controller;
     ApiService apiService;
 
     @Mock
@@ -42,7 +42,7 @@ public class CoinControllerTest {
         MockitoAnnotations.initMocks(this);
 
         apiService = new ApiServiceImpl(new RestTemplateBuilder().build());
-        controller = new CoinController(service);
+        controller = new IndexController(service);
 
 
     }
