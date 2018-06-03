@@ -21,9 +21,9 @@
 <div style="margin-left: 800px">
     <form class="form-inline" th:action="@{/coin}" th:object="${values}" method="post" id="rangeForm">
         <label for="start">Start</label>
-        <input type="date" name="start" th:field="*{startDate}" th:min="${min}" th:max="${max}" id="start"/>
+        <input type="date" name="start" th:field="*{startDate}" th:min="${min}" th:max="${max}" id="start">
         <label for="end">End</label>
-        <input type="date" name="end" th:field="*{endDate}" th:max="${max}" id="end"/>
+        <input type="date" name="end" th:field="*{endDate}" th:max="${max}" id="end">
         <button type="submit" class="myBtn btn btn-primary ">Change chart time range</button>
     </form>
 </div>
