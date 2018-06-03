@@ -15,3 +15,4 @@ https://apiv2.bitcoinaverage.com/#historical-data-2
 
 # Cloud-based service
 The application is deployed on a Heroku
+https://coin-trends-app.herokuapp.com/coin
