@@ -8,10 +8,10 @@ https://apiv2.bitcoinaverage.com/#historical-data-2
 - The line chart is using a logarithmic scale
 - A user is able to change chart time range (x-axis)
 
-#Built With
+# Built With
 Java with SpringBoot - Logic
 JavaScript - Highcharts module
 Maven - Dependency Management
 
-#Cloud-based service
+# Cloud-based service
 The application is deployed on a Heroku
